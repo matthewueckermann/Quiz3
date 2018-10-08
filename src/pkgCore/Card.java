@@ -5,7 +5,7 @@ import pkgEnum.*;
 public class Card implements Comparable {
 
 	private eSuit eSuit;
-	private eRank eRank;
+	eRank eRank;
 
 	public Card(pkgEnum.eSuit eSuit, pkgEnum.eRank eRank) {
 		super();

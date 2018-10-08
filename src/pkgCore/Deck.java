@@ -39,9 +39,38 @@ public class Deck {
 		}
 		return (null);
 	}
+	
+	public Card Draw(eRank eRank) { // Created this method to test getRemaining
+		for (Card c : cardsInDeck) {
+			if (c.geteRank() == eRank) {
+				cardsInDeck.remove(c);
+				return (c);
+			}
+		}
+		return (null);
+	}
 
 	public int getiDeckCount()
 	{
 		return cardsInDeck.size();
+	}
+	
+	public int getRemaining(Object eNum) {
+		int count = 0;
+		if(eNum instanceof eRank) {
+			for(Card c: cardsInDeck) {
+				if(c.geteRank() == eNum) {
+					count++;
+				}
+			}
+		}
+		else if(eNum instanceof eSuit) {
+			for(Card c: cardsInDeck) {
+				if(c.geteSuit() == eNum) {
+					count++;
+				} 
+			}
+		}
+		return count;
 	}
 }
